@@ -1,6 +1,8 @@
 #Chih-Hsueh Hsieh
 import requests
 import json
+from dotenv import load_dotenv
+import os
 #creates function to lower amount of code
 
 
@@ -23,7 +25,8 @@ def get_contents(API_Key, year, month, name):
 
 
 #My API key I made on NYTimes
-API_Key = "8CnFI1j8ibMmmmWpDG0VGGdVJEtjJHoR"
+load_dotenv()
+API_Key = os.getenv("NYT_API_KEY")
 #Example for October 1918, month is 10
 get_contents(API_Key, 1918, 10, 'titles_1918.txt')
 #Example for October 2020, month is 10
